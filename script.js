@@ -13,8 +13,10 @@ const data = {
   }
 };
 
-function render(time) {
-  const el = document.querySelectorAll("#club");
+function render(time, position) {
+  const el = document.querySelectorAll("position");
+
+  console.log(el);
 
   el.forEach(e => {
     e.innerHTML = time;
@@ -42,6 +44,22 @@ function reset(input) {
 
 function compare(time) {
   // CHECAR SE O TIME ESTA DENTRO DO OBJETO COM A KEY DO ANO RESPECTIVO
+  console.log(Object.entries(data)[2])
+
+  const casa = Object.values(data)[2].time1;
+  const fora = Object.values(data)[2].time2;
+
+  console.log(casa, fora);
+
+  if(Object.entries(data)[0][0] === "2012") {    
+    if(casa == time) {
+      render(time, "#home_club");
+    } else if(fora == time) {
+      render(time, "#away_club");
+    } else {
+      console.log("errou");
+    }
+  }
 }
 
 function formElement(selector, eventHandler) {
