@@ -14,7 +14,7 @@ const data = {
 };
 
 function render(time, position) {
-  const el = document.querySelectorAll("position");
+  const el = document.querySelectorAll(position);
 
   console.log(el);
 
@@ -52,9 +52,9 @@ function compare(time) {
   console.log(casa, fora);
 
   if(Object.entries(data)[0][0] === "2012") {    
-    if(casa == time) {
+    if(casa === time) {
       render(time, "#home_club");
-    } else if(fora == time) {
+    } else if(fora === time) {
       render(time, "#away_club");
     } else {
       console.log("errou");
