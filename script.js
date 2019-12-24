@@ -1,4 +1,7 @@
-const data = {
+(function() {
+  'use strict';
+
+  const data = {
   2012: {
     time1: "corinthians",
     time2: "chelsea"
@@ -41,9 +44,11 @@ function reset(input) {
 }
 
 function compare(time) {
-  compareAndRender(time, "1993", 0);
-  compareAndRender(time, "2005", 1);
-  compareAndRender(time, "2012", 2);
+  const years = Object.keys(data);
+  
+  years.forEach((year, i) => {
+    compareAndRender(time, year, i);
+  });
 }
 
 function compareAndRender(time, year, index) {
@@ -67,3 +72,4 @@ function formElement(selector, eventHandler) {
 }
 
 formElement("user-input", formEventHandler);
+}());
