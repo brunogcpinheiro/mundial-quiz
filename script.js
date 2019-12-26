@@ -24,6 +24,24 @@ function render(time, position) {
   });
 }
 
+function renderMatches() {
+  const gameDIV = document.querySelector(".game");
+  const gameEl = document.createElement("div");
+  const titleEl = document.createElement("h3");
+  const titleText = Object.keys(data);
+  titleText.forEach(title => {
+    titleEl.innerHTML = title
+  });
+
+  gameEl.innerHTML = `<p>Brasil</p><p class="away_club">Inglaterra</p>`;
+
+  gameDIV.appendChild(titleEl);
+  gameEl.classList.add(".time");
+  gameDIV.appendChild(gameEl);
+}
+
+renderMatches();
+
 function userInputField(input) {
   return document.getElementById(input);
 }
